@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Cool Car Club</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/CSS" href="assets/CSS/connection.css" />
+  </head>
+
+  <body>
+    <%- include ('partials/header') %> <% if (user != null) { %> <%- include
+    ('partials/myConnections_nav') %> <%} else { %> <%- include
+    ('partials/user_nav') %> <% } %> <%- include ('partials/navigation') %>
+    <div class="main_Content">
+      <div class="connectioninfo">
+        <h2 class="red_font"><%= data.title %></h2>
+        <img
+          src="assets/Media/Cars_and_Coffee.jpg"
+          alt="Cars and Coffee Logo"
+          id="car_and_coffee_logo"
+        />
+        <p>Hosted By: <%= data.host %></p>
+        <p>Date: <%= data.dateAndTime %></p>
+        <p>Location: <%= data.location %></p>
+        <h3 class="red_font">Details</h3>
+        <p>
+          <%= data.details %>
+        </p>
+      </div>
+      <p id="people_going">Are you going? 7 people are going</p>
+      <br />
+      <div class="buttons">
+        <form action="/connection/<%= data.id %>" method="POST">
+          <input type="submit" id="ybutton" value="Yes" />
+          <input type="hidden" name="rsvp" value="Yes" />
+          <input type="hidden" name="cID" value="<%= data.ID %>" />
+        </form>
+        <form action="/connection/<%= data.id %>" method="POST">
+          <input type="submit" id="nbutton" value="No" />
+          <input type="hidden" name="rsvp" value="No" />
+          <input type="hidden" name="cID" value="<%= data.ID %>" />
+        </form>
+        <form action="/connection/<%= data.id %>" method="POST">
+          <input type="submit" id="mbutton" value="Maybe" />
+          <input type="hidden" name="rsvp" value="Maybe" />
+          <input type="hidden" name="cID" value="<%= data.ID %>" />
+        </form>
+      </div>
+    </div>
+    <%- include ('partials/footer') %>
+  </body>
+</html>

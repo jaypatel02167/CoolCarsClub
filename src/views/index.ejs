@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Cool Car Club</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/CSS" href="assets/CSS/index.css" />
+  </head>
+
+  <body>
+    <%- include ('partials/header') %>
+     <% if (user != null) { %>
+      
+      <%- include ('partials/myConnections_nav') %>
+     <%} else { %>
+      
+       <%- include ('partials/user_nav') %> 
+    <% } %>
+    <%- include ('partials/navigation') %>
+    <div class="main_Content">
+      <h2>Welcome to the Cool Car Club!</h2>
+      <h3 id="mainP">
+        This club is all about exploring exotics and muscle cars from all around
+        the world. There are many meetups that will be posted on the website.
+        You can RSVP to the one you like. We have two main categories exotic
+        cars and muscle cars. Each meet will have cars from different users that
+        others can go look in.
+      </h3>
+    </div>
+    <%- include ('partials/footer') %>
+  </body>
+</html>

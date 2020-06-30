@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Cool Car Club</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      type="text/CSS"
+      href="assets/CSS/newConnection.css"
+    />
+  </head>
+
+  <body>
+    <%- include ('partials/header') %> <% if (user != null) { %> <%- include
+    ('partials/myConnections_nav') %> <%} else { %> <%- include
+    ('partials/user_nav') %> <% } %> <%- include ('partials/navigation') %>
+    <div class="main_Content">
+      <form action="/newConnection" method="POST" id="usrform">
+        <label>Meetup name:</label><br />
+        <input
+          type="text"
+          id="mName"
+          name="mName"
+          placeholder="Meetup Name"
+        /><br />
+        <label>Meetup ID:</label><br />
+        <input type="text" id="mID" name="mID" placeholder="Meetup ID" /><br />
+        <label>Category:</label><br />
+        <input
+          type="text"
+          id="category"
+          name="category"
+          placeholder="Category"
+        /><br />
+        <label>Host:</label><br />
+        <input type="text" id="host" name="host" placeholder="Host" /><br />
+        <label id="details">Details</label><br />
+        <textarea
+          rows="4"
+          cols="50"
+          name="details"
+          id="details"
+          form="usrform"
+        ></textarea
+        ><br />
+        <label>Location:</label><br />
+        <input
+          type="text"
+          id="location"
+          name="location"
+          placeholder="Location"
+        /><br />
+        <label>Date</label><br />
+        <input
+          type="text"
+          id="date"
+          name="date"
+          placeholder="Date and Time"
+        /><br />
+        <input type="submit" value="Create Connection" />
+      </form>
+    </div>
+    <%- include ('partials/footer') %>
+  </body>
+</html>
