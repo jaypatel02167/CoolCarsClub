@@ -3,7 +3,6 @@
   <br>
 </h1>
 
-<h4 align="center">Project for ITIS 6112</h4>
 <br>
 
 ## Key Features
